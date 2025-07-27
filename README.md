@@ -5,6 +5,10 @@
 そのため、これ以外のコンパイル言語は対象としてません（C#以外が私が知りません）。
 本当はC++やRust等でもしたいですが、~~めんどくさいので~~やりません。
 
+また下記内でのPowerShellの実行について、スクリプトの実行時に実行ポリシーを指定して実行します。
+ソースコードを見ればわかりますが、特にセキュリティ的に問題ないことしか行いません。
+しかし、セキュリティ的に何か問題があっても**自己責任**でお願いします。
+
 
 
 ## 利用方法
@@ -12,7 +16,7 @@
 ベンチマークの仕方は以下のコマンドPowerShellで実行してください。
 
 ```powershell
-.\benchmark.ps1
+PowerShell -ExecutionPolicy Bypass .\benchmark.ps1
 ```
 
 これで、ビルド時間が出力されます。
@@ -27,5 +31,5 @@
 
 ベンチマーク用のソースコードも自動生成できます。
 ```powershell
-.\source_code_gen.ps1
+PowerShell -ExecutionPolicy Bypass .\source_code_gen.ps1
 ```
